@@ -9,8 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class JpaDemoApplication {
 
 	public static void main(String[] args) {
-		log.info("Hello world");
 		SpringApplication.run(JpaDemoApplication.class, args);
 	}
-
 }
