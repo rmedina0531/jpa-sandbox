@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  backend:
+    build: .
+    ports:
+      - "8080:8080"
+  prod-db:
+    image: postgres
+    ports:
+      - "8081:5432"
+    volumes:
+      - "~/programming/databases/prod-db:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: userpassword
+      POSTGRES_DB: proddb
+  dev-db:
+    image: postgres
+    ports:
+      - "8082:5432"
+    volumes:
+      - "~/programming/databases/dev-db:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: userpassword
+      POSTGRES_DB: devdb
